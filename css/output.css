@@ -8,6 +8,7 @@
       "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-50: oklch(97.1% 0.013 17.38);
     --color-red-400: oklch(70.4% 0.191 22.216);
     --color-orange-500: oklch(70.5% 0.213 47.604);
     --color-amber-400: oklch(82.8% 0.189 84.429);
@@ -345,8 +346,26 @@
   .resize {
     resize: both;
   }
+  .scroll-mt-22 {
+    scroll-margin-top: calc(var(--spacing) * 22);
+  }
+  .scroll-mt-23 {
+    scroll-margin-top: calc(var(--spacing) * 23);
+  }
+  .scroll-mt-23\.5 {
+    scroll-margin-top: calc(var(--spacing) * 23.5);
+  }
   .scroll-mt-24 {
     scroll-margin-top: calc(var(--spacing) * 24);
+  }
+  .list-inside {
+    list-style-position: inside;
+  }
+  .list-decimal {
+    list-style-type: decimal;
+  }
+  .list-disc {
+    list-style-type: disc;
   }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -368,6 +387,16 @@
   }
   .gap-6 {
     gap: calc(var(--spacing) * 6);
+  }
+  :where(.space-y-1 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(var(--spacing) * var(--tw-space-y-reverse));
+    margin-block-end: calc(var(--spacing) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  :where(.space-y-2 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
   }
   .scroll-smooth {
     scroll-behavior: smooth;
@@ -555,6 +584,15 @@
   .underline {
     text-decoration-line: underline;
   }
+  .decoration-red-50 {
+    text-decoration-color: var(--color-red-50);
+  }
+  .decoration-0 {
+    text-decoration-thickness: 0px;
+  }
+  .decoration-1 {
+    text-decoration-thickness: 1px;
+  }
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
@@ -661,6 +699,11 @@
 @property --tw-skew-y {
   syntax: "*";
   inherits: false;
+}
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
 }
 @property --tw-border-style {
   syntax: "*";
@@ -779,6 +822,7 @@
       --tw-rotate-z: initial;
       --tw-skew-x: initial;
       --tw-skew-y: initial;
+      --tw-space-y-reverse: 0;
       --tw-border-style: solid;
       --tw-gradient-position: initial;
       --tw-gradient-from: #0000;
